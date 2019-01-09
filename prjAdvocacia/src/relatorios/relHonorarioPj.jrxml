@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.3.final using JasperReports Library version 6.4.3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="relHonorarioPj" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="37a81af6-a73e-4591-bd95-7114181c63df">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="bin\advocacia\advocacia.xml"/>
+	<queryString language="SQL">
+		<![CDATA[select * from cliente_pj, pessoa, advogado]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cliente_pj"/>
+	</field>
+	<field name="nomeFantasia" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nomeFantasia"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cliente_pj"/>
+	</field>
+	<field name="razaoSocial" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="razaoSocial"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cliente_pj"/>
+	</field>
+	<field name="cnpj" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cnpj"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cliente_pj"/>
+	</field>
+	<field name="inscricaoMun" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="inscricaoMun"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cliente_pj"/>
+	</field>
+	<field name="inscricaoEst" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="inscricaoEst"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cliente_pj"/>
+	</field>
+	<field name="pessoa_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="pessoa_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cliente_pj"/>
+	</field>
+	<field name="ativo" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="ativo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cliente_pj"/>
+	</field>
+	<field name="COLUMN_9" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+	</field>
+	<field name="logradouro" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="logradouro"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+	</field>
+	<field name="numero" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="numero"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+	</field>
+	<field name="bairro" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="bairro"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+	</field>
+	<field name="complemento" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="complemento"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+	</field>
+	<field name="cidade" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cidade"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+	</field>
+	<field name="estado" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="estado"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+	</field>
+	<field name="cep" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cep"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+	</field>
+	<field name="email" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="email"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+	</field>
+	<field name="tel" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tel"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+	</field>
+	<field name="cel" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cel"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+	</field>
+	<field name="COLUMN_20" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="advogado"/>
+	</field>
+	<field name="nome" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nome"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="advogado"/>
+	</field>
+	<field name="CodOAB" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CodOAB"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="advogado"/>
+	</field>
+	<field name="nacionalidade" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nacionalidade"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="advogado"/>
+	</field>
+	<field name="usuarios_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="usuarios_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="advogado"/>
+	</field>
+	<field name="COLUMN_25" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="email"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="advogado"/>
+	</field>
+	<field name="COLUMN_26" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cel"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="advogado"/>
+	</field>
+	<field name="COLUMN_27" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="ativo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="advogado"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="550" height="79" uuid="126c3c14-46cb-4c47-9e2f-cd361559d77d"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Black" size="24"/>
+				</textElement>
+				<text><![CDATA[CONTRATO DE HONORÁRIOS ADVOCATÍCIOS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="600" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="550" height="560" uuid="69524996-e7a1-4f3e-a710-148fb0bd032b"/>
+				<text><![CDATA[CONTRATANTE(S): +$F{nomeFantasia}"," +$F{razaoSocial}",, inscrito no CNPJ sob" +$F{cnpf}",situada na Rua” +$F{logradouro}”, nº” +$F{numero}”, bairro” +$F{bairro}”, Cidade” +$F{cidade}”, Cep” +$F{cep}”, no Estado” +$F{uf}"."
+“CONTRATADO(S):”+$F{nome} “, este(s) com sede profissional na Rua Albino Klocker, 935, Bairro Centro, Cidade de Itararé/SP.”
+“Pelo presente contrato as partes acima ajustam entre si prestação de serviços jurídicos pelas seguintes cláusulas:
+CLÁUSULA PRIMEIRA - DO OBJETO:
+O(S) OUTORGANTE(S), por este instrumento, nomeia(m) e constitui(em) os OUTORGADOS seus bastantes
+procuradores; onde com esta se apresentem, outorgando-lhe (s) os necessários poderes para representá-lo (s) em
+conjunto ou isoladamente, em juízo ou fora dele, em qualquer ação em que for(em) réu(s), autor(es), assistente(s),
+ou oponente(s), podendo tudo praticar, requerer, assinar, com poderes para transigir, reconvir, concordar, discordar,
+ratificar, retificar, receber e intimações, acompanhar quaisquer processos em todos os termos ou instância,
+representar perante qualquer repartição, autarquia ou órgão federal, estadual ou municipal, perante as Agências da
+Previdência Social, Receita Federal do Brasil. Praticar todos os demais atos que se fizerem necessários ao integral
+cumprimento do presente mandato, para o que confere(m) os mais amplos poderes, bem como os contidos, na
+cláusula “ad judicia”, podendo substabelecer(em), no todo ou em parte, com ou sem reservas os poderes aqui
+conferidos, como também requer o benefício da justiça gratuita e declarar insuficiência econômica, bem como
+renunciar valores que excedam aos limite dos Juizados Especiais Federais para a causa que pleitear ações
+administrativas, extrajudiciais e judiciais na(s) área(s) do direito previdenciário, trabalhista e cível.
+CLÁUSULA SEGUNDA - DOS HONORÁRIOS:
+Em remuneração pelos serviços, o CONTRATADO receberá do CONTRATANTE:
+.
+§ 1º - O percentual de honorários sobre a condenação corresponde a 20%.
+§ 2º - Os honorários de sucumbência que forem recebidos em qualquer processo judicial caberão inteiramente ao
+CONTRATADO, sem prejuízo dos honorários contratados.
+CLÁUSULA TERCEIRA - DA RESPONSABILIDADE PELAS CUSTAS E PRODUÇÃO DE PROVAS:
+É de responsabilidade do CONTRATANTE o pagamento das custas e despesas processuais necessárias ao
+andamento da ação, tais como custas judiciais, despesas de condução de oficial de justiça, despesas para obtenção
+de cópias, autenticações, documentos, certidões, despesas com deslocamento para outras cidades distintas de
+Itararé e cidades vizinhas, inclusive para realização de audiências, no valor de 20% do salário mínimo.
+Compete, ainda ao(à) CONTRATANTE o fornecimento de provas, documentos e informações que o CONTRATADO
+solicitar, dentro dos prazos legais, ou fixados pelo juízo da causa, bem como a responsabilidade de manter os
+dados cadastrais atualizados junto ao CONTRATADO, sob pena de responsabilidade da lei processual civil.
+As partes, em comum acordo, elegem o foro de Itararé para dirimir possíveis dúvidas oriundas deste contrato. E por
+estarem justos e contratados, firmam o presente em duas vias de igual teor e forma, reconhecendo como autênticas
+as assinaturas, dispensando o reconhecimento de firma, a fim de que o mesmo surta os seus jurídicos e legais
+efeitos, especialmente os do artigo 24 da Lei 8.906/94 - Estatuto da Advocacia.
+Itararé/SP,   de    de 2017.”
+“_________________________________”
+“RODRIGO MOURA DA SILVA”
+“_________________________________”
+“CONTRATATO”
+“Testemunhas:”
+
+
+“ADVOCACIA”
+“Rua Albino Klocker, 935, Bairro Centro, Cidade de Itararé/SP”
+“Contato: (15) 3531-3939 / E-mail: ALAN_AAD@HOTMAIL.COM / Site:”
+]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

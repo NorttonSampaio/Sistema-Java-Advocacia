@@ -1,0 +1,68 @@
+Feito:
+	-- Modelagem e Criação do banco de dados
+	-- Criação das telas de cadastro de cliente, colaborador e advogado realizado
+	-- a persistência de dados desses cadastros
+	-- criado tela de Login
+	-- Controle de Acesso atraves do id logado no sistema 
+
+Cadastro->Advogado:			
+	-- Ocultar senha no joptionPane
+	-- Logica dos Botoes
+	-- Alternar Botoes
+
+Cadastro->Colaborador:
+	-- Arrumar a Tela de cadastro
+	-- Inserir Logica em todos os botoes
+	-- Alternar Botoes
+
+Cadastro->Clientes:
+	-- Erro na recuperacao da imagem do Cliente Fisico
+	-- Filtros
+	-- Alternar Botoes
+	-- erro no checkbox
+
+Financeiro:
+	-- Filtros de Pagos ou nao
+	-- Filtros em geral
+	-- Logica dos Botoes
+	-- Alternar Botoes
+	-- Logica para Deletar
+
+Geral:
+	-- Reparar o banco de dados e conferir os campos obrigatorios e vazios
+	-- Inserir o advogado atraves do funcionario dentro de cada acao(financeiro/processo/agenda)
+	-- Atualizar cbx em tempo real
+
+Processos:
+	-- Filtros
+	-- Botoes
+	-- Insert, Select, Update e Delete no Banco dessas informacoes
+	-- cbxCliente
+
+Agenda:
+	-- Tela de cadastros
+	-- Tela de Exibicao
+	-- Filtros
+	-- Botoes
+	-- Insert, Select, Update e Delete no Banco dessas informacoes
+	-- cbxCliente
+
+Fazendo:
+	Tela e Menus para relatorios
+Pendente:
+	Testar o Software
+Reparos:
+	Geral:
+		Reparar as telas de cadastro adicionando na label sobre campos not null
+		garantir que todos os campos not nulls sejam preenchidos
+		Reparar as tabelas alterando o tamanho das colunas
+		inserir Modo de envio de email
+	Relatorios:
+		Aplicar logica aos botoes e menu item para abrir o InternalFrame
+		Imprimir Relatorios de Cliente
+		Imprimir Relatorios de Advogado
+		Imprimir Relatorios de Usuarios
+		Imprimir Relatorios de Funcionarios
+		Imprimir Relatorios do financeiro
+		Imprimir Relatorios da Agenda do dia/mes/Geral
+		imprmir Relatorios dos processos

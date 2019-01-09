@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24/11/2017 02:51:35 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="control.ClientePj" table="cliente_pj" catalog="advocacia1" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="pessoa" class="control.Pessoa" fetch="select">
+            <column name="pessoa_id" not-null="true" />
+        </many-to-one>
+        <property name="nomeFantasia" type="string">
+            <column name="nomeFantasia" length="100" not-null="true" />
+        </property>
+        <property name="razaoSocial" type="string">
+            <column name="razaoSocial" length="100" not-null="true" />
+        </property>
+        <property name="cnpj" type="string">
+            <column name="cnpj" length="14" not-null="true" />
+        </property>
+        <property name="inscricaoMun" type="string">
+            <column name="inscricaoMun" length="45" />
+        </property>
+        <property name="inscricaoEst" type="string">
+            <column name="inscricaoEst" length="45" />
+        </property>
+        <property name="ativo" type="byte">
+            <column name="ativo" not-null="true" />
+        </property>
+        <set name="tblAgendaPjs" table="tbl_agenda_pj" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="cliente_pj_id" not-null="true" />
+            </key>
+            <one-to-many class="control.TblAgendaPj" />
+        </set>
+        <set name="tblFinanceiroPjs" table="tbl_financeiro_pj" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="cliente_pj_id" not-null="true" />
+            </key>
+            <one-to-many class="control.TblFinanceiroPj" />
+        </set>
+        <set name="tblAdvCpjs" table="tbl_adv_cpj" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="cliente_pj_id" not-null="true" />
+            </key>
+            <one-to-many class="control.TblAdvCpj" />
+        </set>
+        <set name="tblProcessoPjs" table="tbl_processo_pj" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="cliente_pj_id" not-null="true" />
+            </key>
+            <one-to-many class="control.TblProcessoPj" />
+        </set>
+    </class>
+</hibernate-mapping>

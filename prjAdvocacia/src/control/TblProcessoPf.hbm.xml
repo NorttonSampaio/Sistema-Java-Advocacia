@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24/11/2017 02:51:35 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="control.TblProcessoPf" table="tbl_processo_pf" catalog="advocacia1" optimistic-lock="version">
+        <composite-id name="id" class="control.TblProcessoPfId">
+            <key-property name="processoId" type="int">
+                <column name="processo_id" />
+            </key-property>
+            <key-property name="clientePfId" type="int">
+                <column name="cliente_pf_id" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="clientePf" class="control.ClientePf" update="false" insert="false" fetch="select">
+            <column name="cliente_pf_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="processo" class="control.Processo" update="false" insert="false" fetch="select">
+            <column name="processo_id" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

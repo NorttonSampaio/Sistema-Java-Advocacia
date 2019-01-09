@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="relReciboHonorariosPf" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2c2b56bf-f57e-4068-99dc-34517558b2e1">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="bin\advocacia\advocacia.xml"/>
+	<property name="ireport.zoom" value="1.0000000000000004"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[Select * from cliente_pf, financeiro, processo, advogado]]>
+	</queryString>
+	<field name="financeiro.advogado.nome" class="java.lang.Object"/>
+	<field name="clientePf.nome" class="java.lang.Object"/>
+	<field name="clientePf.cpf" class="java.lang.Object"/>
+	<field name="financeiro.valorParcela" class="java.lang.Object"/>
+	<field name="financeiro.parcela" class="java.lang.Object"/>
+	<field name="financeiro.parcelaTotal" class="java.lang.Object"/>
+	<field name="financeiro.advogado.pessoa.cidade" class="java.lang.String"/>
+	<field name="financeiro.advogado.pessoa.estado" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="79" uuid="fca8d90d-eea4-419d-adeb-0924f651787c"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Black" size="24"/>
+				</textElement>
+				<text><![CDATA[RECIBO PARCELA DE HONORÁRIOS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="230" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="555" height="86" uuid="41ee63f0-e55b-4906-b9de-5a19e330408e"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{financeiro.advogado.nome}+", recebi de " +$F{clientePf.nome}+","+" Sob o CPF:"+ $F{clientePf.cpf} + " a importância de R$" +$F{financeiro.valorParcela}+", referente ao pagamento da parcela(" +$F{financeiro.parcela}+"/"+$F{financeiro.parcelaTotal}+") concernente ao acordo realizado no Processo nº _____________ , em trâmite na ______________ da Comarca de ____________________."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="111" y="159" width="214" height="20" uuid="c396d468-517d-47ce-b9c5-03747a861ce9"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{financeiro.advogado.pessoa.cidade}+"/"+$F{financeiro.advogado.pessoa.estado}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="325" y="159" width="100" height="20" uuid="85029ea7-dc62-494b-b7a1-355a338f5624"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="196" width="555" height="34" uuid="c8674d87-bd65-4369-9690-8b6e89c896c4"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["________________________________\n"+
+$F{financeiro.advogado.nome}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

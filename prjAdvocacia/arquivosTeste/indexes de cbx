@@ -1,0 +1,17 @@
+cbxFiltroParametro.addItem("ID");
+cbxFiltroParametro.addItem("NOME");
+cbxFiltroParametro.addItem("NOME PAI");
+cbxFiltroParametro.addItem("NOME MAE");
+cbxFiltroParametro.addItem("CPF");
+cbxFiltroParametro.addItem("RG");
+cbxFiltroParametro.addItem("ORGAO");
+cbxFiltroParametro.addItem("SEXO");
+cbxFiltroParametro.addItem("ESTADO CIVIL");
+cbxFiltroParametro.addItem("LOGRADOURO");
+cbxFiltroParametro.addItem("NUMERO");
+cbxFiltroParametro.addItem("BAIRRO");
+cbxFiltroParametro.addItem("CIDADE");
+cbxFiltroParametro.addItem("UF");
+cbxFiltroParametro.addItem("CEP");
+cbxFiltroParametro.addItem("EMAIL");
+cbxFiltroParametro.addItem("CELULAR");

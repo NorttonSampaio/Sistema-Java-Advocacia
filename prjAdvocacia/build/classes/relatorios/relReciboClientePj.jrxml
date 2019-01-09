@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.3.final using JasperReports Library version 6.4.3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="relReciboClientePj" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="95f295d7-8cab-4c40-8141-ff7a88234466">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="bin\advocacia\advocacia.xml"/>
+	<queryString language="SQL">
+		<![CDATA[select * from cliente_pj, pessoa, advogado, processo, financeiro]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cliente_pj"/>
+	</field>
+	<field name="nomeFantasia" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nomeFantasia"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cliente_pj"/>
+	</field>
+	<field name="razaoSocial" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="razaoSocial"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cliente_pj"/>
+	</field>
+	<field name="cnpj" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cnpj"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cliente_pj"/>
+	</field>
+	<field name="inscricaoMun" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="inscricaoMun"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cliente_pj"/>
+	</field>
+	<field name="inscricaoEst" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="inscricaoEst"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cliente_pj"/>
+	</field>
+	<field name="pessoa_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="pessoa_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cliente_pj"/>
+	</field>
+	<field name="ativo" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="ativo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cliente_pj"/>
+	</field>
+	<field name="COLUMN_9" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+	</field>
+	<field name="logradouro" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="logradouro"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+	</field>
+	<field name="numero" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="numero"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+	</field>
+	<field name="bairro" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="bairro"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+	</field>
+	<field name="complemento" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="complemento"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+	</field>
+	<field name="cidade" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cidade"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+	</field>
+	<field name="estado" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="estado"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+	</field>
+	<field name="cep" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cep"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+	</field>
+	<field name="email" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="email"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+	</field>
+	<field name="tel" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tel"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+	</field>
+	<field name="cel" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cel"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+	</field>
+	<field name="COLUMN_20" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="advogado"/>
+	</field>
+	<field name="nome" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nome"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="advogado"/>
+	</field>
+	<field name="CodOAB" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CodOAB"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="advogado"/>
+	</field>
+	<field name="nacionalidade" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nacionalidade"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="advogado"/>
+	</field>
+	<field name="usuarios_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="usuarios_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="advogado"/>
+	</field>
+	<field name="COLUMN_25" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="email"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="advogado"/>
+	</field>
+	<field name="COLUMN_26" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cel"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="advogado"/>
+	</field>
+	<field name="COLUMN_27" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="ativo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="advogado"/>
+	</field>
+	<field name="COLUMN_28" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="processo"/>
+	</field>
+	<field name="outrosEnvolvidos" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="outrosEnvolvidos"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="processo"/>
+	</field>
+	<field name="titulo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="titulo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="processo"/>
+	</field>
+	<field name="numeroProcesso" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="numeroProcesso"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="processo"/>
+	</field>
+	<field name="juizoNum" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="juizoNum"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="processo"/>
+	</field>
+	<field name="juizoVara" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="juizoVara"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="processo"/>
+	</field>
+	<field name="juizoForo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="juizoForo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="processo"/>
+	</field>
+	<field name="nomeAcao" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nomeAcao"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="processo"/>
+	</field>
+	<field name="valorCausa" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="valorCausa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="processo"/>
+	</field>
+	<field name="distribuido" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="distribuido"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="processo"/>
+	</field>
+	<field name="movimentacao" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="movimentacao"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="processo"/>
+	</field>
+	<field name="advogado_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="advogado_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="processo"/>
+	</field>
+	<field name="COLUMN_40" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="financeiro"/>
+	</field>
+	<field name="tipo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tipo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="financeiro"/>
+	</field>
+	<field name="futuro" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="futuro"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="financeiro"/>
+	</field>
+	<field name="presente" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="presente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="financeiro"/>
+	</field>
+	<field name="valor" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="valor"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="financeiro"/>
+	</field>
+	<field name="descricao" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="descricao"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="financeiro"/>
+	</field>
+	<field name="parcela" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="parcela"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="financeiro"/>
+	</field>
+	<field name="COLUMN_47" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="advogado_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="financeiro"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="75" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="560" height="75" uuid="f41c07e4-ee88-4aa1-9560-e2b4d8d3a6e4"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Black" size="48"/>
+				</textElement>
+				<text><![CDATA[RECIBO]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="300" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="560" height="260" uuid="cb458b85-650e-4136-a90a-935744fdf3fb"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[“N°.” +$F{numeroProcesso}                                                “Valor:R$”+$F{valor} 
+ 
+  
++$F{nome}”, recebi de”, +$F{nomeFantasia}”, C.N.P.J nº” +$F{cnpj}”, situada na Rua” +$F{logradouro}”, nº” +$F{numero}”, bairro” +$F{bairro}”, Cidade” +$F{cidade}”, Cep” +$F{cep}”, no Estado” +$F{uf}”, a quantia de R$” +$F{valor} “(Valor Expresso), relativa aos honorários advocatícios devidos por serviços realizados de (tipo da ação do processo)” +$F{numeroProcesso}”, cujas cópias dos recibos dos referidos serviços fazem parte deste.”
+
+“Os serviços são diretamente relacionados ao processo nº” +$F{numeroProcesso}”, que tem como parte autora”+$F{nome} “e parte ré” +$F{nome}”.”
+
+“Através do presente, outorgo geral e plena quitação da quantia mencionada e recebida.”
+
+
+
++$F{cidade}”,”   “de”       “de 2017”
+
+"_______________________________________”
++$F{nome}
+]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

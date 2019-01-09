@@ -1,0 +1,13 @@
+INSERT INTO `financeiro`(`id`, `tipo`, `futuro`, `presente`, `valor`, `descricao`, `parcela`, `advogado_id`) VALUES (default, 'E', 'now', 'now', '2000', 'Trap Moviment', '2', 1)
+
+INSERT INTO `advogado`(`id`, `nome`, `CodOAB`, `nacionalidade`, `usuarios_id`, `email`, `cel`, `ativo`) VALUES (DEFAULT, 'Ricardo', '12321', 'Brasileiro', 1, 'ricardo@oab.com', '439999900', 1)
+
+select f.id, f.tipo, f.futuro, f.presente, c.nome, f.parcela, f.descricao, f.valor from Financeiro f JOIN TblFinanceiroPfId tbl where tbl.financeiroId = f.id JOIN ClientePf c where tbl.clientePfId = c.id
+
+SELECT p.idperfil FROM tbPerfil p 
+JOIN tb_depto_perfil tdp WHERE tdp.tb_perfil_id = p.idperfil
+JOIN tbDepto d WHERE d.iddepto = tdp.tb_depto_id
+JOIN tb_usuario_depto tud WHERE tud.tb_depto_id = d.iddepto
+JOIN tbUsuario u WHERE u.idusuario = tud.tb_usuario_id
+WHERE
+u.idusuario = ?

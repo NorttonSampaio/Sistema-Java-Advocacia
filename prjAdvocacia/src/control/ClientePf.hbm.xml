@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24/11/2017 02:51:35 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="control.ClientePf" table="cliente_pf" catalog="advocacia1" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="pessoa" class="control.Pessoa" fetch="select">
+            <column name="pessoa_id" not-null="true" />
+        </many-to-one>
+        <property name="foto" type="string">
+            <column name="foto" length="16777215" />
+        </property>
+        <property name="nome" type="string">
+            <column name="nome" length="100" not-null="true" />
+        </property>
+        <property name="nomePai" type="string">
+            <column name="nomePai" length="100" />
+        </property>
+        <property name="nomeMae" type="string">
+            <column name="nomeMae" length="100" not-null="true" />
+        </property>
+        <property name="cpf" type="string">
+            <column name="cpf" length="11" not-null="true" unique="true" />
+        </property>
+        <property name="rg" type="string">
+            <column name="rg" length="9" not-null="true" unique="true" />
+        </property>
+        <property name="orgao" type="string">
+            <column name="orgao" length="5" not-null="true" />
+        </property>
+        <property name="sexo" type="char">
+            <column name="sexo" length="1" not-null="true" />
+        </property>
+        <property name="DNasc" type="date">
+            <column name="d_nasc" length="10" not-null="true" />
+        </property>
+        <property name="estadoCivil" type="string">
+            <column name="estadoCivil" length="13" not-null="true" />
+        </property>
+        <property name="empresa" type="string">
+            <column name="empresa" length="50" />
+        </property>
+        <property name="profissao" type="string">
+            <column name="profissao" length="45" />
+        </property>
+        <property name="ctps" type="string">
+            <column name="ctps" length="11" />
+        </property>
+        <property name="pis" type="string">
+            <column name="pis" length="11" />
+        </property>
+        <property name="ativo" type="byte">
+            <column name="ativo" not-null="true" />
+        </property>
+        <set name="tblAdvCpfs" table="tbl_adv_cpf" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="cliente_pf_id" not-null="true" />
+            </key>
+            <one-to-many class="control.TblAdvCpf" />
+        </set>
+        <set name="tblProcessoPfs" table="tbl_processo_pf" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="cliente_pf_id" not-null="true" />
+            </key>
+            <one-to-many class="control.TblProcessoPf" />
+        </set>
+        <set name="tblFinanceiroPfs" table="tbl_financeiro_pf" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="cliente_pf_id" not-null="true" />
+            </key>
+            <one-to-many class="control.TblFinanceiroPf" />
+        </set>
+        <set name="tblAgendaPfs" table="tbl_agenda_pf" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="cliente_pf_id" not-null="true" />
+            </key>
+            <one-to-many class="control.TblAgendaPf" />
+        </set>
+    </class>
+</hibernate-mapping>

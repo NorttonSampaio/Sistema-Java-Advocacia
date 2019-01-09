@@ -1,0 +1,57 @@
+Para save, oque preciso?
+
+	id cliente
+	TblFinanceiroPfId tblid = new TblFinanceiroPfId(c.getId(), f.getId());
+	TblFinanceiroPf tbl = new TblFinanceiroPf(tblid, c, f);
+
+para Update, oque preciso?
+
+	financeiro apenas
+
+salvar:
+
+if(value=='F'){
+    try{
+        ClientePf c = new ClientePf();
+        c.setId(vetorCliente[cbxCliente.getSelectedIndex()]);
+        Session s = dao.DAOSistema.getSessionFactory().openSession();
+        s.beginTransaction();
+        s.save(f);
+        JOptionPane.showMessageDialog(IFrmFinanceiro.this, c.getId()+" - "+f.getId());
+        TblFinanceiroPfId id = new TblFinanceiroPfId(c.getId(), f.getId());
+        TblFinanceiroPf tbl = new TblFinanceiroPf(id, c, f);
+        s.save(tbl);
+        s.getTransaction().commit();
+        carregarTabelaFisico();
+        tpnPrincipal.setSelectedIndex(1);
+        tpnExibir.setSelectedIndex(0);
+    }catch(Exception ex){
+        ex.printStackTrace();
+    }
+}else{
+    try{
+        ClientePj c = new ClientePj();
+        c.setId(vetorCliente[cbxCliente.getSelectedIndex()]);
+        Session s = dao.DAOSistema.getSessionFactory().openSession();
+        s.beginTransaction();
+        s.save(f);
+        TblFinanceiroPjId id = new TblFinanceiroPjId(c.getId(), f.getId());
+        TblFinanceiroPj tbl = new TblFinanceiroPj(id, c, f);
+        s.save(tbl);
+        s.getTransaction().commit();
+        carregarTabelaJuridico();
+        tpnPrincipal.setSelectedIndex(1);
+        tpnExibir.setSelectedIndex(1);
+    }catch(Exception ex){
+        ex.printStackTrace();
+    }
+}
+
+alterar:
+Session s = dao.DAOSistema.getSessionFactory().openSession();
+s.beginTransaction();
+s.merge(f);
+s.getTransaction().commit();
+carregarTabelaFisico();
+tpnPrincipal.setSelectedIndex(1);
+tpnExibir.setSelectedIndex(0);

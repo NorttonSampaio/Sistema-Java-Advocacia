@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24/11/2017 02:51:35 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="control.TblFinanceiroPf" table="tbl_financeiro_pf" catalog="advocacia1" optimistic-lock="version">
+        <composite-id name="id" class="control.TblFinanceiroPfId">
+            <key-property name="clientePfId" type="int">
+                <column name="cliente_pf_id" />
+            </key-property>
+            <key-property name="financeiroId" type="int">
+                <column name="financeiro_id" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="clientePf" class="control.ClientePf" update="false" insert="false" fetch="select">
+            <column name="cliente_pf_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="financeiro" class="control.Financeiro" update="false" insert="false" fetch="select">
+            <column name="financeiro_id" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

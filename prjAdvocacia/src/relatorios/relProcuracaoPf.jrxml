@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c08a0015-7a90-41b6-a6f5-17395323f548">
+	<property name="ireport.zoom" value="1.2100000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="354"/>
+	<field name="clientePf.nome" class="java.lang.Object"/>
+	<field name="clientePf.estadoCivil" class="java.lang.Object"/>
+	<field name="clientePf.profissao" class="java.lang.Object"/>
+	<field name="clientePf.pessoa.email" class="java.lang.Object"/>
+	<field name="clientePf.cpf" class="java.lang.Object"/>
+	<field name="clientePf.rg" class="java.lang.Object"/>
+	<field name="clientePf.pessoa.logradouro" class="java.lang.Object"/>
+	<field name="clientePf.pessoa.numero" class="java.lang.Object"/>
+	<field name="clientePf.pessoa.bairro" class="java.lang.Object"/>
+	<field name="clientePf.pessoa.cidade" class="java.lang.Object"/>
+	<field name="clientePf.pessoa.estado" class="java.lang.Object"/>
+	<field name="advogado.nome" class="java.lang.Object"/>
+	<field name="advogado.nomeAdvocacia" class="java.lang.Object"/>
+	<field name="advogado.pessoa.logradouro" class="java.lang.Object"/>
+	<field name="advogado.pessoa.numero" class="java.lang.Object"/>
+	<field name="advogado.pessoa.bairro" class="java.lang.Object"/>
+	<field name="advogado.pessoa.cidade" class="java.lang.Object"/>
+	<field name="advogado.pessoa.estado" class="java.lang.Object"/>
+	<field name="advogado.pessoa.tel" class="java.lang.Object"/>
+	<field name="advogado.pessoa.cel" class="java.lang.Object"/>
+	<field name="advogado.pessoa.email" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="70" uuid="51f598d7-31d9-4ab3-8cec-c30f40810e18"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Black" size="24" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[PROCURAÇÃO]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="672" splitType="Stretch">
+			<textField>
+				<reportElement x="15" y="17" width="524" height="110" uuid="77ffb700-2339-435c-8d92-334c00f00e27"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["OUTORGANTE(S): "+ $F{clientePf.nome}+", "+ $F{clientePf.estadoCivil}+", "+ $F{clientePf.profissao} +", E-Mail:" + $F{clientePf.pessoa.email}+ ", inscrito no CPF sob nº " + $F{clientePf.cpf}+ ", portador do RG " +$F{clientePf.rg}+", residente e domiciliado na "+ $F{clientePf.pessoa.logradouro}+" "+$F{clientePf.pessoa.numero}+", Bairro: " + $F{clientePf.pessoa.bairro}+", Cidade de " + $F{clientePf.pessoa.cidade}+"/"+$F{clientePf.pessoa.estado}+", Brasil. \n\n"
++
+"OUTORGADO(S): "+$F{advogado.nome}+", este com sede profissional na "+ $F{advogado.pessoa.logradouro}+" "+$F{advogado.pessoa.numero}+", Bairro: " + $F{advogado.pessoa.bairro}+", Cidade de " + $F{advogado.pessoa.cidade}+"/"+$F{advogado.pessoa.estado}+", Brasil. \n\n"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="15" y="127" width="524" height="167" uuid="1a563981-5a50-4fde-be1f-1e350fb27c23"/>
+				<textElement textAlignment="Justified"/>
+				<text><![CDATA[PODERES E FINALIDADES:
+O(S) OUTORGANTE(S), por este instrumento, nomeia(m) e constitui(em) os OUTORGADOS seus bastantes procuradores; onde com esta se apresentem, outorgando-lhe (s) os necessários poderes para representá-lo (s) em conjunto ou isoladamente, em juízo ou fora dele, em qualquer ação em que for(em) réu(s), autor(es), assistente(s), ou oponente(s), podendo tudo praticar, requerer, assinar, com poderes para transigir, reconvir, concordar, discordar, ratificar, retificar, receber e intimações, acompanhar quaisquer processos em todos os termos ou instância, representar perante qualquer repartição, autarquia ou órgão federal, estadual ou municipal perante as Agências da Previdência Social, Receita Federal do Brasil. Praticar todos os demais atos que se fizerem necessários ao integral cumprimento do presente mandato, para o que confere(m) os mais amplos poderes, bem como os contidos, na cláusula “ad judicia”, podendo substabelecer(em), no todo ou em parte, com ou sem reservas os poderes aqui conferidos, como também requer o benefício da justiça gratuita e declarar insuficiência econômica, bem como renunciar valores que excedam aos limite dos Juizados Especiais Federais para a causa que pleitear ações administrativas, extrajudiciais e judiciais na(s) área(s) do direito previdenciário, trabalhista e cível.]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="15" y="312" width="282" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="efef705d-7369-4a82-9cf0-ee224a570bd0"/>
+				<textElement textAlignment="Left" rotation="None" markup="none">
+					<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{advogado.pessoa.cidade}+"/"+$F{advogado.pessoa.estado} +", " + new SimpleDateFormat("dd 'de' MMMMM 'de' yyyy").format(new java.util.Date())]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="15" y="406" width="524" height="32" uuid="68564fed-32f8-47ca-874c-679d92e2dea4"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["____________________________\n"+
+$F{clientePf.nome}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<lastPageFooter>
+		<band height="50">
+			<textField>
+				<reportElement x="15" y="0" width="524" height="50" uuid="1f11eb17-b94e-4990-951b-0c5deab853af"/>
+				<textElement textAlignment="Center">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{advogado.nomeAdvocacia}+"\n"+
+$F{advogado.pessoa.logradouro}+", "+$F{advogado.pessoa.numero}+", Bairro:" + $F{advogado.pessoa.bairro}+", Cidade de "+$F{advogado.pessoa.cidade}+"/"+$F{advogado.pessoa.estado}+"\n"+
+"Contato: "+$F{advogado.pessoa.tel}+ ($F{advogado.pessoa.email}.isEmpty()?"":" / E-mail: "+ $F{advogado.pessoa.email})]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+</jasperReport>

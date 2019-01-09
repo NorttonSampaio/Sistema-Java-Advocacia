@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24/11/2017 02:51:35 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="control.Financeiro" table="financeiro" catalog="advocacia1" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="advogado" class="control.Advogado" fetch="select">
+            <column name="advogado_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="processo" class="control.Processo" fetch="select">
+            <column name="processo_id" not-null="true" />
+        </many-to-one>
+        <property name="tipo" type="char">
+            <column name="tipo" length="1" not-null="true" />
+        </property>
+        <property name="futuro" type="date">
+            <column name="futuro" length="10" not-null="true" />
+        </property>
+        <property name="presente" type="date">
+            <column name="presente" length="10" />
+        </property>
+        <property name="valor" type="double">
+            <column name="valor" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="descricao" type="string">
+            <column name="descricao" length="50" not-null="true" />
+        </property>
+        <property name="parcelaTotal" type="int">
+            <column name="parcelaTotal" not-null="true" />
+        </property>
+        <property name="parcela" type="java.lang.Integer">
+            <column name="parcela" />
+        </property>
+        <property name="valorParcela" type="java.lang.Double">
+            <column name="valorParcela" precision="22" scale="0" />
+        </property>
+        <property name="porcentagemHonorario" type="java.lang.Double">
+            <column name="porcentagemHonorario" precision="22" scale="0" />
+        </property>
+        <set name="tblFinanceiroPfs" table="tbl_financeiro_pf" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="financeiro_id" not-null="true" />
+            </key>
+            <one-to-many class="control.TblFinanceiroPf" />
+        </set>
+        <set name="tblFinanceiroPjs" table="tbl_financeiro_pj" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="financeiro_id" not-null="true" />
+            </key>
+            <one-to-many class="control.TblFinanceiroPj" />
+        </set>
+    </class>
+</hibernate-mapping>

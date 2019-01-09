@@ -1,0 +1,144 @@
+id
+tipo
+pessoa
+futuro
+presente
+cliente
+parcela
+descricao
+valor
+
+	public Advogado(Usuarios usuarios, String nome, String codOab, String nacionalidade, String email, String cel, byte ativo) {
+       this.usuarios = usuarios;
+       this.nome = nome;
+       this.codOab = codOab;
+       this.nacionalidade = nacionalidade;
+       this.email = email;
+       this.cel = cel;
+       this.ativo = ativo;
+    }
+
+	public String[] getAdvogado(){
+        return new String[]{
+            String.valueOf(id),
+            nome,
+            codOab,
+            nacionalidade,
+            cel
+        };
+    }
+
+	public ClientePf(Pessoa pessoa, String foto, String nome, String nomePai, String nomeMae, String cpf, String rg, String orgao, char sexo, Date DNasc, String estadoCivil, String empresa, String profissao, String ctps, String pis, byte ativo) {
+       this.pessoa = pessoa;
+       this.foto = foto;
+       this.nome = nome;
+       this.nomePai = nomePai;
+       this.nomeMae = nomeMae;
+       this.cpf = cpf;
+       this.rg = rg;
+       this.orgao = orgao;
+       this.sexo = sexo;
+       this.DNasc = DNasc;
+       this.estadoCivil = estadoCivil;
+       this.empresa = empresa;
+       this.profissao = profissao;
+       this.ctps = ctps;
+       this.pis = pis;
+       this.ativo = ativo;
+    }
+
+    public String[] getCliente(){
+        return new String[]{
+            String.valueOf(id),
+            nome,
+            cpf,
+            getSexoString(),
+            pessoa.getEndereco(),
+            pessoa.getCel()
+        };
+    }
+	
+    public String getSexoString(){
+        if(sexo=='M' || sexo=='m'){
+            return "MASCULINO";
+        }else{
+            return "FEMININO";
+        }
+    }
+
+	public ClientePj(Pessoa pessoa, String nomeFantasia, String razaoSocial, String cnpj, String inscricaoMun, String inscricaoEst, byte ativo) {
+       this.pessoa = pessoa;
+       this.nomeFantasia = nomeFantasia;
+       this.razaoSocial = razaoSocial;
+       this.cnpj = cnpj;
+       this.inscricaoMun = inscricaoMun;
+       this.inscricaoEst = inscricaoEst;
+       this.ativo = ativo;
+    }
+
+    public String[] getCliente(){
+        return new String[]{
+            String.valueOf(id),
+            razaoSocial,
+            nomeFantasia,
+            cnpj,
+            pessoa.getEndereco(),
+            pessoa.getCel()
+        };
+    }
+
+
+
+    public String[] getFuncionario(){
+        return new String[]{
+            String.valueOf(id),
+            nome,
+            getCargoString(),
+            getSexoString(),
+            usuarios.getLogin()
+        };
+    }
+    
+    public String getCargoString(){
+        if(cargo=='E' || cargo=='e'){
+            return "ESTAGIÁRIO";
+        }else{
+            return "SECRETÁRIA";
+        }
+    }
+    
+    public String getSexoString(){
+        if(sexo=='M' || sexo=='m'){
+            return "MASCULINO";
+        }else{
+            return "FEMININO";
+        }
+    }
+
+    public Pessoa(String logradouro, String numero, String bairro, String complemento, String cidade, String estado, String cep, String email, String tel, String cel) {
+       this.logradouro = logradouro;
+       this.numero = numero;
+       this.bairro = bairro;
+       this.complemento = complemento;
+       this.cidade = cidade;
+       this.estado = estado;
+       this.cep = cep;
+       this.email = email;
+       this.tel = tel;
+       this.cel = cel;
+    }
+
+    public String getEndereco(){
+        String txt="";
+        txt+=logradouro;
+        if(!numero.equals("")){
+            txt+=", "+numero;
+        }
+        if(!complemento.equals("")){
+            txt+=", "+complemento;
+        }
+        txt+=", "+bairro+", "+cidade+ "-"+estado;
+        return txt;
+    }
+
+    jdbc:mysql://localhost:3306/advocacia?zeroDateTimeBehavior=convertToNull

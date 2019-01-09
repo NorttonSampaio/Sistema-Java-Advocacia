@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24/11/2017 02:51:35 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="control.Advogado" table="advogado" catalog="advocacia1" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="pessoa" class="control.Pessoa" fetch="select">
+            <column name="pessoa_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="usuarios" class="control.Usuarios" fetch="select">
+            <column name="usuarios_id" not-null="true" />
+        </many-to-one>
+        <property name="nome" type="string">
+            <column name="nome" length="100" not-null="true" />
+        </property>
+        <property name="codOab" type="string">
+            <column name="CodOAB" length="6" not-null="true" unique="true" />
+        </property>
+        <property name="nacionalidade" type="string">
+            <column name="nacionalidade" length="45" not-null="true" />
+        </property>
+        <property name="ativo" type="byte">
+            <column name="ativo" not-null="true" />
+        </property>
+        <property name="nomeAdvocacia" type="string">
+            <column name="nomeAdvocacia" length="100" not-null="true" />
+        </property>
+        <set name="processos" table="processo" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="advogado_id" not-null="true" />
+            </key>
+            <one-to-many class="control.Processo" />
+        </set>
+        <set name="tblAdvCpjs" table="tbl_adv_cpj" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="advogado_id" not-null="true" />
+            </key>
+            <one-to-many class="control.TblAdvCpj" />
+        </set>
+        <set name="financeiros" table="financeiro" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="advogado_id" not-null="true" />
+            </key>
+            <one-to-many class="control.Financeiro" />
+        </set>
+        <set name="agendas" table="agenda" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="advogado_id" not-null="true" />
+            </key>
+            <one-to-many class="control.Agenda" />
+        </set>
+        <set name="funcionarios" table="funcionario" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="advogado_id" not-null="true" />
+            </key>
+            <one-to-many class="control.Funcionario" />
+        </set>
+        <set name="tblAdvCpfs" table="tbl_adv_cpf" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="advogado_id" not-null="true" />
+            </key>
+            <one-to-many class="control.TblAdvCpf" />
+        </set>
+    </class>
+</hibernate-mapping>

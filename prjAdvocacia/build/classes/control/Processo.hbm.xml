@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24/11/2017 02:51:35 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="control.Processo" table="processo" catalog="advocacia1" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="advogado" class="control.Advogado" fetch="select">
+            <column name="advogado_id" not-null="true" />
+        </many-to-one>
+        <property name="outrosEnvolvidos" type="string">
+            <column name="outrosEnvolvidos" length="65535" />
+        </property>
+        <property name="titulo" type="string">
+            <column name="titulo" length="45" not-null="true" />
+        </property>
+        <property name="numeroProcesso" type="int">
+            <column name="numeroProcesso" not-null="true" />
+        </property>
+        <property name="juizoNum" type="int">
+            <column name="juizoNum" not-null="true" />
+        </property>
+        <property name="juizoVara" type="string">
+            <column name="juizoVara" length="20" not-null="true" />
+        </property>
+        <property name="juizoForo" type="string">
+            <column name="juizoForo" length="60" not-null="true" />
+        </property>
+        <property name="nomeAcao" type="string">
+            <column name="nomeAcao" length="45" not-null="true" />
+        </property>
+        <property name="valorCausa" type="double">
+            <column name="valorCausa" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="distribuido" type="date">
+            <column name="distribuido" length="10" not-null="true" />
+        </property>
+        <property name="movimentacao" type="string">
+            <column name="movimentacao" />
+        </property>
+        <set name="tblProcessoPjs" table="tbl_processo_pj" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="processo_id" not-null="true" />
+            </key>
+            <one-to-many class="control.TblProcessoPj" />
+        </set>
+        <set name="tblProcessoPfs" table="tbl_processo_pf" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="processo_id" not-null="true" />
+            </key>
+            <one-to-many class="control.TblProcessoPf" />
+        </set>
+        <set name="agendas" table="agenda" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="processo_id" not-null="true" />
+            </key>
+            <one-to-many class="control.Agenda" />
+        </set>
+        <set name="financeiros" table="financeiro" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="processo_id" not-null="true" />
+            </key>
+            <one-to-many class="control.Financeiro" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="relAndamentoProcessoClientePf" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="de2ae583-4178-405e-a283-c4068ef08f47">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="advocacia"/>
+	<property name="ireport.zoom" value="1.1269722013523669"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="136"/>
+	<queryString language="SQL">
+		<![CDATA[select * from cliente_pf, processo]]>
+	</queryString>
+	<field name="clientePj.nomeFantasia" class="java.lang.String"/>
+	<field name="processo.outrosEnvolvidos" class="java.lang.String"/>
+	<field name="processo.titulo" class="java.lang.String"/>
+	<field name="processo.numeroProcesso" class="java.lang.Integer"/>
+	<field name="processo.juizoNum" class="java.lang.Integer"/>
+	<field name="processo.juizoVara" class="java.lang.String"/>
+	<field name="processo.nomeAcao" class="java.lang.String"/>
+	<field name="processo.juizoForo" class="java.lang.String"/>
+	<field name="processo.distribuido" class="java.lang.Object"/>
+	<field name="processo.movimentacao" class="java.lang.String"/>
+	<field name="processo.valorCausa" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="550" height="75" uuid="3926e05f-9e17-42eb-9108-c77bcd4e389c"/>
+				<textElement>
+					<font fontName="Arial Black" size="36"/>
+				</textElement>
+				<text><![CDATA[ANDAMENTO PROCESSUAL]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="617" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="555" height="617" uuid="f7f332a6-25a4-4101-b6d2-68253ace31fb"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Nome Cliente: " + $F{clientePj.nomeFantasia} + 
+"\nOutros Envolvidos: " + $F{processo.outrosEnvolvidos} +
+"\nTítulo do Processo: " + $F{processo.titulo} + 
+"\nNº do processo: " + $F{processo.numeroProcesso} + "                          Nº do Juízo: " + $F{processo.juizoNum} + 
+"\nVara: " + $F{processo.juizoVara} +
+"\nNome da ação: " + $F{processo.nomeAcao} +
+"\nValor da Causa: R$" + $F{processo.valorCausa} +
+"\nForo: " + $F{processo.juizoForo} + "                                         Distribuido em: " + $F{processo.distribuido} +
+"\n\nMovimentações: \n" + $F{processo.movimentacao}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,25 @@
+clientePf.nome
+clientePf.estadoCivil
+clientePf.profissao
+clientePf.pessoa.email
+clientePf.cpf
+clientePf.rg
+clientePf.logradouro
+clientePf.numero
+clientePf.bairro
+clientePf.cidade
+clientePf.estado
+advogado.logradouro
+advogado.numero
+advogado.bairro
+advogado.cidade
+advogado.estado
+advogado.nomeAdvocacia
+advogado.pessoa.telefone
+advogado.pessoa.celular
+advogado.pessoa.email
+
+"OUTORGANTE(S): "+ $F{tbl.clientePf.nome}+", "+ $F{clientePf.estadoCivil}+", "+ $F{clientePf.profissao}+", E-Mail:" + $F{clientePf.pessoa.email}+ ", inscrito no CPF sob nº " + $F{clientePf.cpf}+ ", portador do RG" +$F{clientePf.rg}+", residente e domiciliado na "+ $F{clientePf.pessoa.logradouro}+" "+$F{clientePf.pessoa.numero}+", Bairro: " + $F{clientePf.pessoa.bairro}+", Cidade de " + $F{clientePf.pessoa.cidade}+"/"+$F{clientePf.pessoa.estado}+", Brasil. \n\n"
++
+"OUTORGADO(S): "+$F{advogado.nome}+", este com sede profissional na "+ $F{advogado.pessoa.logradouro}+" "+$F{advogado.pessoa.numero}+", Bairro: " + $F{advogado.pessoa.bairro}+", Cidade de " + $F{advogado.pessoa.cidade}+"/"+$F{advogado.pessoa.estado}+", Brasil. \n\n"
+

@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24/11/2017 02:51:35 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="control.Agenda" table="agenda" catalog="advocacia1" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="advogado" class="control.Advogado" fetch="select">
+            <column name="advogado_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="processo" class="control.Processo" fetch="select">
+            <column name="processo_id" not-null="true" />
+        </many-to-one>
+        <property name="data" type="date">
+            <column name="data" length="10" not-null="true" />
+        </property>
+        <property name="hora" type="string">
+            <column name="hora" length="12" />
+        </property>
+        <property name="detalhes" type="string">
+            <column name="detalhes" length="16777215" />
+        </property>
+        <property name="notificarEmail" type="byte">
+            <column name="notificarEmail" not-null="true" />
+        </property>
+        <property name="ultimaVeificacao" type="date">
+            <column name="ultimaVeificacao" length="10" not-null="true" />
+        </property>
+        <property name="checkDataEnvio" type="string">
+            <column name="checkDataEnvio" length="3" />
+        </property>
+        <property name="local" type="string">
+            <column name="local" length="100" not-null="true" />
+        </property>
+        <set name="tblAgendaPfs" table="tbl_agenda_pf" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="agenda_id" not-null="true" />
+            </key>
+            <one-to-many class="control.TblAgendaPf" />
+        </set>
+        <set name="tblAgendaPjs" table="tbl_agenda_pj" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="agenda_id" not-null="true" />
+            </key>
+            <one-to-many class="control.TblAgendaPj" />
+        </set>
+    </class>
+</hibernate-mapping>

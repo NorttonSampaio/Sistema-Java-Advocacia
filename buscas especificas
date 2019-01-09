@@ -1,0 +1,155 @@
+public String[] getAdvogado(){
+        return new String[]{
+            String.valueOf(id),
+            nome,
+            codOab,
+            nacionalidade,
+            pessoa.getCel()
+        };
+    }
+    
+    public String[] getCliente(){
+        return new String[]{
+            String.valueOf(id),
+            nome,
+            cpf,
+            getSexoString(),
+            pessoa.getEndereco(),
+            pessoa.getCel()
+        };
+    }
+    
+    public String getSexoString(){
+        if(sexo=='M' || sexo=='m'){
+            return "MASCULINO";
+        }else{
+            return "FEMININO";
+        }
+    }
+
+    public String[] getCliente(){
+        return new String[]{
+            String.valueOf(id),
+            razaoSocial,
+            nomeFantasia,
+            cnpj,
+            pessoa.getEndereco(),
+            pessoa.getCel()
+        };
+    }
+
+    public String getParcelaString(){
+        return getParcela()+"/"+getParcelaTotal()+"-"+ (getValor()/getParcelaTotal());
+    }
+
+    public String[] getFuncionario(){
+        return new String[]{
+            String.valueOf(id),
+            nome,
+            String.valueOf(getCargo()),
+            String.valueOf(getSexo()),
+            usuarios.getLogin(),
+            String.valueOf(ByteToBoolean())
+        };
+
+        
+    }
+    
+    public String getCargoString(){
+        if(cargo=='E' || cargo=='e'){
+            return "ESTAGIÁRIO";
+        }else{
+            return "SECRETÁRIA";
+        }
+    }
+    
+    public String getSexoString(){
+        if(sexo=='M' || sexo=='m'){
+            return "MASCULINO";
+        }else{
+            return "FEMININO";
+        }
+    }
+
+    public String getEndereco(){
+        String txt="";
+        txt+=logradouro;
+        if(!numero.equals("")){
+            txt+=", "+numero;
+        }
+        if(!complemento.equals("")){
+            txt+=", "+complemento;
+        }
+        txt+=", "+bairro+", "+cidade+ "-"+estado;
+        return txt;
+    }
+
+    public String[] getAgendatbl(){
+        return new String[]{
+            String.valueOf(agenda.getId()),
+            clientePf.getNome(),
+            String.valueOf(agenda.getData()),
+            String.valueOf(agenda.getHora()),
+            agenda.getDetalhes(),
+            agenda.getLocal()
+        };
+    }
+
+    public String[] getAgendatbl(){
+        return new String[]{
+            String.valueOf(agenda.getId()),
+            clientePj.getNomeFantasia(),
+            String.valueOf(agenda.getData()),
+            String.valueOf(agenda.getHora()),
+            agenda.getDetalhes(),
+            agenda.getLocal()
+        };
+    }
+
+    public String[] getFinanceirotbl(){
+        return new String[]{
+            String.valueOf(financeiro.getId()),
+            String.valueOf(financeiro.getTipo()),
+            String.valueOf(financeiro.getFuturo()),
+            String.valueOf(financeiro.getPresente()),
+            clientePf.getNome(),
+            financeiro.getDescricao(),
+            financeiro.getParcelaString(),
+            String.valueOf(financeiro.getValor())
+        };
+    }
+
+    public String[] getFinanceirotbl(){
+        return new String[]{
+            String.valueOf(financeiro.getId()),
+            String.valueOf(financeiro.getTipo()),
+            String.valueOf(financeiro.getFuturo()),
+            String.valueOf(financeiro.getPresente()),
+            clientePj.getNomeFantasia(),
+            financeiro.getDescricao(),
+            financeiro.getParcelaString(),
+            String.valueOf(financeiro.getValor())
+        };
+    }
+
+    public String[] getProcessotbl(){
+        return new String[]{
+            String.valueOf(processo.getId()),
+            clientePf.getNome(),
+            String.valueOf(processo.getTitulo()),
+            String.valueOf(processo.getNomeAcao()),
+            String.valueOf(processo.getValorCausa()),
+            String.valueOf(processo.getDistribuido())
+        };
+    }
+
+    public String[] getProcessotbl(){
+        return new String[]{
+            String.valueOf(processo.getId()),
+            clientePj.getNomeFantasia(),
+            String.valueOf(processo.getTitulo()),
+            String.valueOf(processo.getNomeAcao()),
+            String.valueOf(processo.getValorCausa()),
+            String.valueOf(processo.getDistribuido())
+        };
+    }
